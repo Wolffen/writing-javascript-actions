@@ -14,7 +14,7 @@ async function run() {
     console.log(`joe is ${jokeBody}`);
     console.log(`octokit is defined? ${octokit !== null && octokit !== undefined}`);
 
-    const newIssue = await octokit.issues.create({
+    const newIssue = await octokit.rest.issues.create({
       repo: github.context.repo.repo,
       owner: github.context.repo.owner,
       title: issueTitle,
