@@ -8,6 +8,7 @@ async function run() {
     const token = core.getInput("repo-token");
 
     const octokit = new github.getOctokit(token);
+    
 
     console.log(`token is length ${token.length}`);
     console.log(`joe is ${jokeBody}`);
@@ -20,6 +21,7 @@ async function run() {
       body: jokeBody
     });
   } catch (error) {
+    console.log(JSON.stringify(error, null, 2));
     core.setFailed(error.message);
   }
 }
