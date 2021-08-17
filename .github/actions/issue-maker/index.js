@@ -21,7 +21,7 @@ async function run() {
       body: jokeBody
     });
   } catch (error) {
-    console.log(JSON.stringify(error, null, 2));
+    console.log(error.toString());
     core.setFailed(error.message);
   }
 }
