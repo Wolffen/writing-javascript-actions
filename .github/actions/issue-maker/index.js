@@ -9,6 +9,10 @@ async function run() {
 
     const octokit = new github.getOctokit(token);
 
+    console.log(`token is length ${token.length}`);
+    console.log(`joe is ${jokeBody}`);
+    console.log(`octokit is defined? ${octokit !== null && octokit !== undefined}`);
+
     const newIssue = await octokit.issues.create({
       repo: github.context.repo.repo,
       owner: github.context.repo.owner,
